@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRUD con Fetch + PHP OOP + MySQL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="page-header">
+            <div>
+                <p class="eyebrow mb-2">Desarrollo de Software VII</p>
+                <h1>CRUD con Fetch + PHP OOP + MySQL</h1>
+                <p class="lead mb-0">Guardar, editar, buscar y listar productos desde un formulario dinámico.</p>
+            </div>
+            <div class="header-badge">
+                <span>Fetch API</span>
+                <strong>JSON + PDO</strong>
+            </div>
+        </section>
+
+        <section class="content-grid">
+            <div class="form-panel">
+                <div class="panel-title">
+                    <div>
+                        <p class="eyebrow mb-1">Formulario</p>
+                        <h2>Datos del producto</h2>
+                    </div>
+                    <button class="btn btn-outline-secondary btn-sm" type="button" id="btnLimpiar">Limpiar</button>
+                </div>
+
+                <form id="productoForm" novalidate>
+                    <input type="hidden" id="id" name="id">
+
+                    <div class="mb-3">
+                        <label class="form-label" for="codigo">Código</label>
+                        <input class="form-control" type="text" id="codigo" name="codigo" maxlength="20" placeholder="Ejemplo: P-004" required>
+                        <div class="invalid-feedback" id="error-codigo"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="producto">Producto</label>
+                        <input class="form-control" type="text" id="producto" name="producto" maxlength="100" placeholder="Nombre del producto" required>
+                        <div class="invalid-feedback" id="error-producto"></div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label" for="precio">Precio</label>
+                            <input class="form-control" type="number" id="precio" name="precio" min="0" step="0.01" placeholder="0.00" required>
+                            <div class="invalid-feedback" id="error-precio"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="cantidad">Cantidad</label>
+                            <input class="form-control" type="number" id="cantidad" name="cantidad" min="1" step="1" placeholder="1" required>
+                            <div class="invalid-feedback" id="error-cantidad"></div>
+                        </div>
+                    </div>
+
+                    <div class="action-row">
+                        <button class="btn btn-primary" type="submit" id="btnRegistrar">Registrar</button>
+                        <button class="btn btn-success" type="button" id="btnActualizar" disabled>Actualizar</button>
+                        <button class="btn btn-dark" type="button" id="btnBuscar">Buscar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-panel">
+                <div class="panel-title">
+                    <div>
+                        <p class="eyebrow mb-1">Inventario</p>
+                        <h2>Listado de productos</h2>
+                    </div>
+                    <span class="counter" id="contadorProductos">0 productos</span>
+                </div>
+
+                <div class="search-strip">
+                    <label class="form-label mb-0" for="busqueda">Buscar por código, ID o nombre</label>
+                    <div class="input-group">
+                        <input class="form-control" type="search" id="busqueda" name="busqueda" placeholder="P-001, 1, monitor...">
+                        <button class="btn btn-outline-primary" type="button" id="btnBuscarTexto">Buscar</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Código</th>
+                                <th>Producto</th>
+                                <th class="text-end">Precio</th>
+                                <th class="text-end">Cantidad</th>
+                                <th class="text-center">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaProductos">
+                            <tr>
+                                <td colspan="6" class="text-center text-muted py-4">Cargando productos...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

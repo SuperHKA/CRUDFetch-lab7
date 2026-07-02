@@ -1,0 +1,231 @@
+:root {
+    --bg: #f4f0e8;
+    --ink: #17202a;
+    --muted: #68717d;
+    --panel: #ffffff;
+    --line: #d9e0e8;
+    --blue: #2563eb;
+    --green: #16835a;
+    --charcoal: #1f2937;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--ink);
+    background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.08), transparent 32%),
+        linear-gradient(315deg, rgba(22, 131, 90, 0.12), transparent 30%),
+        var(--bg);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.app-shell {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 36px 0;
+}
+
+.page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px;
+    margin-bottom: 22px;
+    color: #fff;
+    background: linear-gradient(135deg, #17202a, #244a68 62%, #16835a);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    box-shadow: 0 24px 70px rgba(31, 41, 55, 0.24);
+}
+
+.page-header h1 {
+    max-width: 760px;
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.7rem);
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.page-header .lead {
+    max-width: 720px;
+    color: rgba(255, 255, 255, 0.82);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.eyebrow {
+    color: inherit;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.78;
+}
+
+.header-badge {
+    min-width: 150px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.header-badge span,
+.header-badge strong {
+    display: block;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 420px) 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.form-panel,
+.table-panel {
+    padding: 24px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 16px 40px rgba(31, 41, 55, 0.11);
+}
+
+.panel-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.panel-title h2 {
+    margin: 0;
+    font-size: 1.35rem;
+}
+
+.form-label,
+.btn,
+.form-control,
+.table,
+.counter {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.form-label {
+    color: var(--charcoal);
+    font-weight: 700;
+}
+
+.form-control {
+    border-color: #cbd5e1;
+    border-radius: 6px;
+}
+
+.form-control:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.16);
+}
+
+.action-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.btn {
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.search-strip {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 14px;
+    align-items: center;
+    padding: 14px;
+    margin-bottom: 14px;
+    background: #f8fafc;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    color: #334155;
+    background: #eef4f8;
+    border-bottom: 1px solid #d2dce8;
+    font-size: 0.86rem;
+    text-transform: uppercase;
+}
+
+.table tbody td {
+    border-color: #e5ebf1;
+}
+
+.counter,
+.code-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.counter {
+    color: #14532d;
+    background: #dcfce7;
+}
+
+.code-pill {
+    color: #1e3a8a;
+    background: #dbeafe;
+}
+
+@media (max-width: 920px) {
+    .page-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .app-shell {
+        width: min(100% - 20px, 1180px);
+        padding: 18px 0;
+    }
+
+    .page-header,
+    .form-panel,
+    .table-panel {
+        padding: 18px;
+    }
+
+    .panel-title,
+    .search-strip {
+        align-items: stretch;
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+
+    .action-row {
+        grid-template-columns: 1fr;
+    }
+}
