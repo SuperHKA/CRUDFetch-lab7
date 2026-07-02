@@ -137,3 +137,8 @@ Actualización de productos:
 ![1782961635904](image/README/1782961635904.png)
 
 Tambien se puede seleccionar el producto para actualizar valores.
+
+
+## Conclusión general
+
+En este laboratorio nos permitió aprender a desarrollar un sistema CRUD completo, integrando JavaScript con Fetch API, PHP orientado a objetos y una base de datos MySQL. También se comprendió cómo enviar y procesar datos de manera asíncrona sin recargar la página, utilizar respuestas en formato JSON, aplicar validaciones tanto en el cliente como en el servidor y emplear consultas preparadas con PDO para mejorar la seguridad. En general, el proyecto permitió fortalecer los conocimientos sobre la comunicación entre el frontend, el backend y la base de datos.
