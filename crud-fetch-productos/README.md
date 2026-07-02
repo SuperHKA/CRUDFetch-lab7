@@ -2,6 +2,13 @@
 
 Laboratorio universitario de Desarrollo de Software VII para registrar, modificar, buscar y listar productos usando PHP puro orientado a objetos, PDO, MySQL, Fetch API, FormData, Bootstrap y SweetAlert2.
 
+
+Hecho por André Reboulet y Rubén Dominguez.
+
+Docente : IRINA FONG
+
+Grupo: 1GS131
+
 ## Lo que se debe de usar para ejecutar este laboratorio
 
 - XAMPP o WampServer con Apache y MySQL activos.
@@ -111,12 +118,22 @@ Respuesta base:
 - Al modificar, `cantidad` puede ser `0`.
 - `codigo` es unico en la base de datos.
 
-## Capturas sugeridas
+## Capturas de pantalla:
 
-Guarde las evidencias del laboratorio en:
+Formulario + listado de productos
 
-- `assets/img/capturas/formulario.png`
-- `assets/img/capturas/guardar-producto.png`
-- `assets/img/capturas/buscar-producto.png`
-- `assets/img/capturas/modificar-producto.png`
-- `assets/img/capturas/listado-productos.png`
+![1782960584433](image/README/1782960584433.png)
+
+Registro de productos:
+
+![1782961620692](image/README/1782961620692.png)
+
+Busqueda de productos:
+
+![1782961628882](image/README/1782961628882.png)
+
+Actualización de productos:
+
+![1782961635904](image/README/1782961635904.png)
+
+Tambien se puede seleccionar el producto para actualizar valores.
